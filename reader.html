@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran Reader — quranonline.ca</title>
+  <meta name="description" content="Read the Holy Quran online with Arabic text and English translation. Browse all 114 surahs, search verses, and bookmark your favorites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Nav / Header -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <span class="icon">&#9798;&#65039;</span> Quran Verse
+    </a>
+    <div class="reader-header">
+      <button class="header-btn" id="sidebar-toggle" title="Surah List" aria-label="Toggle surah list">&#9776;</button>
+      <select class="surah-selector" id="surah-selector" aria-label="Select Surah"></select>
+    </div>
+    <div class="header-actions">
+      <button class="header-btn" id="search-btn" title="Search (/)">&#128269;</button>
+      <button class="header-btn" id="bookmarks-btn" title="Bookmarks">&#128278;</button>
+      <button class="header-btn" id="settings-btn" title="Settings">&#9881;&#65039;</button>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <div class="reader-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-search">
+        <input type="text" id="sidebar-filter" placeholder="Filter surahs...">
+      </div>
+      <ul class="surah-list" id="surah-list"></ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        Loading Quran data...
+      </div>
+    </main>
+  </div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-panel">
+      <div class="search-input-wrap">
+        <input type="text" id="search-input" placeholder="Search by verse reference (2:255), Arabic, or English...">
+      </div>
+      <div class="search-results" id="search-results">
+        <div class="search-hint">Type to search across all 6,236 verses</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div class="settings-panel" id="settings-panel">
+    <h3>Settings</h3>
+    <div class="setting-group">
+      <div class="theme-toggle">
+        <label>Dark Mode</label>
+        <div class="toggle-switch" id="theme-toggle"></div>
+      </div>
+    </div>
+    <div class="setting-group">
+      <label>Font Size</label>
+      <div class="setting-options">
+        <div class="setting-option" data-size="small">Small</div>
+        <div class="setting-option active" data-size="medium">Medium</div>
+        <div class="setting-option" data-size="large">Large</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmarks Panel -->
+  <div class="bookmarks-panel" id="bookmarks-panel">
+    <div class="bookmarks-header">Bookmarks</div>
+    <div class="bookmarks-list" id="bookmarks-list">
+      <div class="bookmarks-empty">No bookmarks yet. Click the bookmark icon on any verse to save it.</div>
+    </div>
+  </div>
+
+  <script src="js/surah-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
